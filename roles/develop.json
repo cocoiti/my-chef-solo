@@ -1,0 +1,42 @@
+{
+  "name": "develop",
+  "default_attributes": {
+    "simple_iptables": {
+      "rules": [
+        "-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT",
+        "-A INPUT -p icmp -j ACCEPT",
+        "-A INPUT -i lo -j ACCEPT",
+        "-A INPUT -p tcp -m tcp --dport 80 -j ACCEPT",
+        "-A INPUT -p tcp -m tcp --dport 443 -j ACCEPT",
+        "-A INPUT -p tcp -m tcp --dport 22 -j ACCEPT"
+      ],
+      "policy": {
+        "INPUT":   "DROP",
+        "FORWARD": "DROP",
+        "OUTPUT":  "ACCEPT"
+      }
+    }
+  },
+  "override_attributes": {
+    "ntp": {
+      "servers": ["ntp.nict.jp", "ntp1.jst.mfeed.ad.jp"]
+    },
+    "openssh": {
+      "server": {
+        "permit_root_login":       "no",
+        "permit_empty_passwords":  "no",
+        "password_authentication": "no",
+        "pubkey_authentication":   "yes"
+      }	
+    }
+  },
+
+  "json_class": "Chef::Role",
+  "description": "develop env",
+  "chef_type": "role",
+  "run_list": [
+    "recipe[ntp]",
+    "recipe[openssh]",
+    "recipe[simple_iptables]"
+  ]
+}

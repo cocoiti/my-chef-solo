@@ -1,0 +1,12 @@
+[submodule "cookbooks/ntp"]
+	path = cookbooks/ntp
+	url = https://github.com/opscode-cookbooks/ntp.git
+[submodule "cookbooks/openssh"]
+	path = cookbooks/openssh
+	url = https://github.com/opscode-cookbooks/openssh.git
+[submodule "cookbooks/simple-iptables"]
+	path = cookbooks/simple-iptables
+	url = https://github.com/dcrosta/cookbook-simple-iptables
+[submodule "cookbooks/simple_iptables"]
+	path = cookbooks/simple_iptables
+	url = https://github.com/dcrosta/cookbook-simple-iptables
