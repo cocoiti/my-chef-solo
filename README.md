@@ -8,7 +8,7 @@ my chef-solo
 ## for debian
 
     # need sudo 
-    wget -O - https://gist.github.com/raw/0bd8c4e27ec231df18e2/7841464fb0b0d125590a89fba6e5f243f7e766b5/chef-solo.bash | sudo bash
+    sudo ./bin/debian-chef-solo-install.bash
     sudo apt-get install -y git
 
 # install & run
