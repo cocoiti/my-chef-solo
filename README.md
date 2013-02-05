@@ -10,7 +10,9 @@ my chef-solo
     # need sudo & git 
     git clone https://github.com/cocoiti/my-chef-solo
     cd ./my-chef-solo/
-    sudo bash ./bin/debian-chef-solo-install.bash
+    git submodule init 
+    git submodule update 
+    bash ./bin/debian-chef-solo-install.bash
 
 # install & run
 
