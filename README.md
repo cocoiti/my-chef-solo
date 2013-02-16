@@ -3,7 +3,6 @@ my-chef-solo
 
 my chef-solo
 
-# chef install
 
 ## for debian
 
@@ -14,6 +13,9 @@ my chef-solo
     git submodule update 
     bash ./bin/debian-chef-solo-install.bash
 
-# install & run
+## install .ssh/authorized_keys from github
+    bash ./bin/make_authorized_keys.bash cocoiti(your github account)
+
+## install & run
 
     sudo chef-solo -c config/develop/solo.rb -j config/develop/solo.json 

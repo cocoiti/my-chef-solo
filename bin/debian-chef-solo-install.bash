@@ -10,5 +10,5 @@ fi
 sudo apt-get -y update
 sudo apt-get -y upgrade
 
-sudo apt-get install -y --force-yes opscode-keyring
-echo "chef chef/chef_server_url string none" | sudo debconf-set-selections && sudo apt-get install chef -y
+DEBIAN_FRONTEND=noninteractive sudo apt-get install -y --force-yes -o Dpkg::Options::="--force-confold" opscode-keyring
+echo "chef chef/chef_server_url string none" | sudo debconf-set-selections && DEBIAN_FRONTEND=noninteractive sudo apt-get install chef -y
